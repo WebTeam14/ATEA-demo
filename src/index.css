@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    --primary: 210 95% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 210 95% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 210 95% 35%;
+
+    --radius: 0.5rem;
+
+    /* Custom colors */
+    --dark-bg: 220 20% 12%;
+    --dark-surface: 220 15% 18%;
+    --orange-glow: 210 95% 35%;
+    --orange-hover: 210 95% 28%;
+    --gray-light: 220 10% 96%;
+    --gray-medium: 220 10% 75%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 20% 12% / 0.92) 0%, hsl(220 15% 18% / 0.85) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(210 95% 35%) 0%, hsl(210 90% 40%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(220 20% 12%) 0%, hsl(220 15% 18%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 10px 40px -10px hsl(220 20% 12% / 0.15);
+    --shadow-elevated: 0 20px 60px -15px hsl(220 20% 12% / 0.25);
+    --shadow-orange: 0 10px 40px -10px hsl(210 95% 35% / 0.4);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 220 20% 12%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 15% 18%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 15% 18%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 210 95% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 10% 25%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 10% 25%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 210 95% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 10% 25%;
+    --input: 220 10% 25%;
+    --ring: 210 95% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-roboto;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-orange {
+    background: var(--gradient-orange);
+  }
+
+  .gradient-dark {
+    background: var(--gradient-dark);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-orange {
+    box-shadow: var(--shadow-orange);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  .text-gradient-orange {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-orange);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 font-poppins font-semibold text-primary-foreground uppercase tracking-wider transition-smooth;
+    background: var(--gradient-orange);
+  }
+
+  .btn-primary:hover {
+    @apply shadow-orange translate-y-[-2px];
+    background-color: hsl(var(--orange-hover));
+  }
+
+  .section-title {
+    @apply font-poppins text-3xl md:text-4xl font-bold text-foreground mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-muted-foreground text-lg max-w-2xl mx-auto;
+  }
+
+  .card-hover {
+    @apply transition-smooth hover:shadow-elevated hover:-translate-y-2;
+  }
+}
