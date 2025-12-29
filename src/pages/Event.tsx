@@ -3,6 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Calendar } from "lucide-react";
 
+// ✅ IMPORT IMAGE (IMPORTANT)
+import eventImg from "@/assets/event.jpg";
+
 export default function Event() {
   return (
     <div className="min-h-screen bg-background">
@@ -10,11 +13,11 @@ export default function Event() {
       <Header />
 
       {/* Banner Section */}
-      <div 
+      <div
         className="text-large new-banner-size w-full bg-cover bg-center bg-no-repeat relative"
         style={{
-          backgroundImage: "url('src/assets/event.jpg')",
-          minHeight: "400px"
+          backgroundImage: `url(${eventImg})`,
+          minHeight: "400px",
         }}
       >
         <div className="bg-black/40 absolute inset-0 flex items-center justify-center">
@@ -45,11 +48,17 @@ export default function Event() {
           {/* Date and Text */}
           <div className="text-center">
             <p className="text-2xl md:text-3xl font-bold text-primary mb-4">
-              {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              {new Date().toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
             </p>
+
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               No Upcoming Event
             </h2>
+
             <p className="text-muted-foreground text-lg max-w-md mx-auto">
               We're working on exciting events and workshops. Please check back soon for upcoming announcements.
             </p>
