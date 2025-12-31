@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
+import AteaLogo from "@/assets/ATEA-logo.jpeg";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -12,14 +13,14 @@ const Footer = () => {
           {/* About */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <img src="src/assets/ATEA-logo.jpeg" alt="Taloja Engineering Logo" className="h-12 w-12 object-contain flex-shrink-0" />
+              <img src={AteaLogo} alt="Taloja Engineering Logo" className="h-12 w-12 object-contain flex-shrink-0" />
               <div>
                 <h3 className="font-poppins font-bold text-lg">Taloja Engineering</h3>
                 <p className="text-xs text-gray-medium">Cluster</p>
               </div>
             </div>
             <p className="text-gray-medium text-sm leading-relaxed mb-6">
-              Taloja Engineering Cluster is a collaborative initiative empowering industries 
+              Taloja Engineering Cluster is a collaborative initiative empowering industries
               through shared resources, advanced manufacturing services, and skill development programs.
             </p>
             <div className="flex gap-3">
