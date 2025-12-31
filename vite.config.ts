@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react"
 import path from "path"
 
 export default defineConfig({
-  base: "/ATEA/", // <--- replace with your GitHub repo name
+  base: "/ATEA-demo/", // <--- replace with your GitHub repo name
   plugins: [react()],
   resolve: {
     alias: {
