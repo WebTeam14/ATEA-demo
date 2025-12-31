@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "homepage": "https://webteam14.github.io/ATEA/",
+    "homepage": "https://webteam14.github.io/ATEA-demo/",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
