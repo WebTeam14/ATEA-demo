@@ -74,7 +74,12 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-gray-medium text-sm">
-                  Taloja MIDC, Plot No. 123,<br />Navi Mumbai, Maharashtra 410208
+                  Additional Taloja Engineering Association
+                  (Taloja Engineering Cluster)
+                  Plot no P-__,
+                  MIDC Taloja,
+                  Taluka Panvel,
+                  District Raigad 410208 Maharashtra
                 </span>
               </li>
               <li className="flex items-center gap-3">

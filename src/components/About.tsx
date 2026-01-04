@@ -78,15 +78,15 @@ const About = () => {
           {/* Content */}
           <div className="animate-slide-in-right" style={{ animationDelay: "0.4s" }}>
             <h2 className="section-title">
-              We have been delivering high-end engineering services in the Taloja region since 2015
+              Established in April 2024
             </h2>
-            
+
             <div className="border-t border-border pt-8 mt-8">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <Counter end={1200} suffix="+" label="Happy Customers" />
                 <Counter end={50} suffix="+" label="Industry Partners" />
                 <Counter end={15} suffix="+" label="Services Offered" />
-                <Counter end={10} suffix="+" label="Years Experience" />
+                <Counter end={2} suffix="+" label="Years Experience" />
               </div>
             </div>
           </div>

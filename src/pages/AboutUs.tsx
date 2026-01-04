@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import TopBar from "@/components/TopBar";
 import Footer from "@/components/Footer";
+import abtUsImg from "../assets/abt_us.jpg";
+import companyImg from "../assets/Company.png";
 
 export default function AboutUs() {
   return (
@@ -9,11 +11,12 @@ export default function AboutUs() {
       <Header />
 
       {/* Banner Section */}
-      <div 
+      <div
         className="text-large new-banner-size w-full bg-cover bg-center bg-no-repeat relative"
         style={{
-          backgroundImage: "url('src/assets/abt_us.jpg')",
-          minHeight: "400px"
+          backgroundImage: `url(${abtUsImg})`,
+          minHeight: "400px",
+
         }}
       >
         <div className="bg-black/40 absolute inset-0 flex items-center justify-center">
@@ -29,7 +32,7 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Side - Image/Icon */}
           <img
-            src="src/assets/Company.png"
+            src={companyImg}
             alt="About us illustration"
             className="order-2 md:order-1 mx-auto md:mx-0 w-80 h-80 md:w-[520px] md:h-[360px] object-cover rounded-2xl"
           />
@@ -40,17 +43,17 @@ export default function AboutUs() {
               <span className="text-primary block">ABOUT US</span>
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-              Established in 2025, going to provide high-tech services and material testing to MSMEs in Taloja. 
-              It supports the automobile, Infrastructure and real estate  sector with advanced machinery services 
-              and includes a training center for industrial skills, supplying skilled manpower to the industry. 
-              Located in the significant industrial hub of Taloja Midc, the cluster is dedicated to 
-              enhancing MSME productivity, competitiveness, and capacity building. 
+              Established in 2025, going to provide high-tech services and material testing to MSMEs in Taloja.
+              It supports the automobile, Infrastructure and real estate  sector with advanced machinery services
+              and includes a training center for industrial skills, supplying skilled manpower to the industry.
+              Located in the significant industrial hub of Taloja Midc, the cluster is dedicated to
+              enhancing MSME productivity, competitiveness, and capacity building.
               Managed by Taloja Engineering Cluster
             </p>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-              It aims to improve performance of small scale industries in the Engineering , Auto, 
-              Infrastructure and real estate sectors through service support of high-end machining and 
-              skill development initiatives. It helps in high tech fabrication and metal protective services.  
+              It aims to improve performance of small scale industries in the Engineering , Auto,
+              Infrastructure and real estate sectors through service support of high-end machining and
+              skill development initiatives. It helps in high tech fabrication and metal protective services.
             </p>
             <ul className="space-y-2">
               <li className="flex items-center text-foreground">
