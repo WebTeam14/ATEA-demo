@@ -1,6 +1,7 @@
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import visionImg from "../assets/vision.jpeg";
 
 export default function MissionVision() {
   return (
@@ -12,7 +13,7 @@ export default function MissionVision() {
       <div
         className="text-large new-banner-size w-full bg-cover bg-center bg-no-repeat relative"
         style={{
-          backgroundImage: "url('src/assets/vision.jpeg')",
+          backgroundImage: `url(${visionImg})`,
           minHeight: "400px",
         }}
       >

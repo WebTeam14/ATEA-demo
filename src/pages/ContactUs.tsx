@@ -2,6 +2,7 @@ import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Footer from "@/components/Footer";
+import contactImg from "../assets/Contact_us1.jpg";
 
 
 export default function ContactUs() {
@@ -11,11 +12,11 @@ export default function ContactUs() {
       <Header />
 
       {/* Banner Section */}
-      <div 
+      <div
         className="text-large new-banner-size w-full bg-cover bg-center bg-no-repeat relative"
         style={{
-          backgroundImage: "url('src/assets/contact-us-banner.jpg')",
-          minHeight: "400px" 
+          backgroundImage: `url(${contactImg})`,
+          minHeight: "400px"
         }}
       >
         <div className="bg-black/40 absolute inset-0 flex items-center justify-center">
