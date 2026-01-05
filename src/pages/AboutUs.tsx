@@ -43,7 +43,7 @@ export default function AboutUs() {
               <span className="text-primary block">ABOUT US</span>
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-              Established in 2025, going to provide high-tech services and material testing to MSMEs in Taloja.
+              Established in April 2024, going to provide high-tech services and material testing to MSMEs in Taloja.
               It supports the automobile, Infrastructure and real estate  sector with advanced machinery services
               and includes a training center for industrial skills, supplying skilled manpower to the industry.
               Located in the significant industrial hub of Taloja Midc, the cluster is dedicated to
