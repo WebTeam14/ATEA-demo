@@ -505,7 +505,13 @@ export default function DesignServices() {
                       : "hover:bg-accent hover:text-accent-foreground text-muted-foreground bg-card border border-transparent hover:border-border"
                       }`}
                   >
-                    <span>{section.title}</span>
+                    <span>
+                      {section.id === "taloja" ? (
+                        <span className="font-bold">Taloja Engineering Cluster</span>
+                      ) : (
+                        section.title
+                      )}
+                    </span>
                     <ChevronRight
                       className={`w-4 h-4 transition-transform ${activeSection === section.id ? "rotate-90" : "group-hover:translate-x-1"
                         }`}
@@ -527,7 +533,11 @@ export default function DesignServices() {
           <div className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border px-6 py-4 flex items-center justify-between shadow-sm">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-primary flex items-center gap-2">
-                {sections.find((s) => s.id === activeSection)?.title}
+                {activeSection === "taloja" ? (
+                  <span className="font-bold">Taloja Engineering Cluster</span>
+                ) : (
+                  sections.find((s) => s.id === activeSection)?.title
+                )}
               </DialogTitle>
             </DialogHeader>
             <button

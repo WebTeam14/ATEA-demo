@@ -50,17 +50,22 @@ const Testimonials = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <Quote className="w-10 h-10 text-primary/20 mb-4" />
-              
+
               <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-4">
-                {testimonial.content}
+                {testimonial.content.split("Taloja Engineering Cluster").map((part, i, arr) => (
+                  <span key={i}>
+                    {part}
+                    {i < arr.length - 1 && <span className="font-bold text-primary">Taloja Engineering Cluster</span>}
+                  </span>
+                ))}
               </p>
-              
+
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                 ))}
               </div>
-              
+
               <div className="border-t border-border pt-4">
                 <h4 className="font-poppins font-semibold text-foreground">
                   {testimonial.name}

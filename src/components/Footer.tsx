@@ -20,7 +20,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-medium text-sm leading-relaxed mb-6">
-              Taloja Engineering Cluster is a collaborative initiative empowering industries
+              <span className="font-bold text-primary">Taloja Engineering Cluster</span> is a collaborative initiative empowering industries
               through shared resources, advanced manufacturing services, and skill development programs.
             </p>
             <div className="flex gap-3">
@@ -75,7 +75,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-gray-medium text-sm">
                   Additional Taloja Engineering Association
-                  (Taloja Engineering Cluster)
+                  (<span className="font-bold">Taloja Engineering Cluster</span>)
                   Plot no P-__,
                   MIDC Taloja,
                   Taluka Panvel,
@@ -99,7 +99,7 @@ const Footer = () => {
       <div className="border-t border-border/10">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-medium text-sm">
-            © {new Date().getFullYear()} Taloja Engineering Cluster. All Rights Reserved.
+            © {new Date().getFullYear()} <span className="font-bold">Taloja Engineering Cluster</span>. All Rights Reserved.
           </p>
           <button
             onClick={scrollToTop}

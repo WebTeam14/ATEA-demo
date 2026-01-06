@@ -20,9 +20,9 @@ export default function ContactUs() {
         }}
       >
         <div className="bg-black/40 absolute inset-0 flex items-center justify-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white text-center px-4 relative z-10">
+          {/* <h1 className="text-5xl md:text-6xl font-bold text-white text-center px-4 relative z-10">
             Contact Us
-          </h1>
+          </h1> */}
         </div>
       </div>
 
@@ -36,7 +36,7 @@ export default function ContactUs() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <span className="text-foreground">+91 9764442901 / +91 9595715702</span>
+                <span className="text-foreground">+91 9876543210</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary" />
@@ -44,7 +44,9 @@ export default function ContactUs() {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-primary" />
-                <span className="text-foreground">Pune, Maharashtra, India</span>
+                <span className="text-foreground">Plot no P-__, MIDC Taloja, Taluka Panvel,
+                  District Raigad
+                  410208 Maharashtra</span>
               </div>
             </div>
           </div>

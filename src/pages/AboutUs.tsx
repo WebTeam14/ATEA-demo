@@ -48,7 +48,7 @@ export default function AboutUs() {
               and includes a training center for industrial skills, supplying skilled manpower to the industry.
               Located in the significant industrial hub of Taloja Midc, the cluster is dedicated to
               enhancing MSME productivity, competitiveness, and capacity building.
-              Managed by Taloja Engineering Cluster
+              Managed by <span className="font-bold text-primary">Taloja Engineering Cluster</span>
             </p>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
               It aims to improve performance of small scale industries in the Engineering , Auto,

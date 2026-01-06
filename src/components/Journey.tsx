@@ -65,7 +65,14 @@ const Journey = () => {
                 {/* Content column */}
                 <div className="flex-1 md:pl-6">
                   <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {item.description.split("Taloja Engineering Cluster").map((part, i, arr) => (
+                      <span key={i}>
+                        {part}
+                        {i < arr.length - 1 && <span className="font-bold text-primary">Taloja Engineering Cluster</span>}
+                      </span>
+                    ))}
+                  </p>
                 </div>
               </div>
             ))}
