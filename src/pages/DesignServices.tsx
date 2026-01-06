@@ -15,6 +15,10 @@ import A500Z from "@/assets/a500Z.png";
 import HorizontalSetup from "@/assets/Horizontal-Setup.png";
 import MCD5X from "@/assets/MCD-5X.png";
 import HDG from "@/assets/HDG.png";
+import HotDipProcess from "@/assets/hot-dip-process.jpg";
+import GalvanizingFacility from "@/assets/galvanizing-facility.jpg";
+import GalvanizingLayout from "@/assets/galvanising-layout.jpg";
+import ZincFlakeProcess from "@/assets/zinc-flake-process.jpg";
 
 // --- Data & Components for Sections ---
 
@@ -306,6 +310,75 @@ const TalojaContent = () => (
   </div>
 );
 
+const HotDipGalvanizingContent = () => (
+  <div className="py-6 space-y-12">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      {/* Description and Facility */}
+      <div className="space-y-6">
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Hot-dip galvanizing is a corrosion protection process where steel or iron is immersed in a bath of molten zinc (around 460°C/860°F) to create a durable, protective coating, forming iron-zinc alloys and a final zinc-rich layer that prevents rust by acting as a barrier and providing sacrificial (cathodic) protection. This widely used method involves meticulous cleaning (degreasing, pickling, fluxing) before dipping, resulting in a robust, long-lasting coating ideal for structures needing rust resistance.
+        </p>
+        <div className="border border-border bg-card shadow-sm overflow-hidden rounded-lg">
+          <img
+            src={GalvanizingFacility}
+            alt="Hot-dip galvanizing facility"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+
+      {/* Process Diagram */}
+      <div className="space-y-6">
+        <h3 className="text-2xl font-bold text-foreground">Our Process</h3>
+        <div className="border border-border bg-card shadow-sm overflow-hidden rounded-lg p-2 bg-white">
+          <img
+            src={HotDipProcess}
+            alt="Hot-dip galvanizing process"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      </div>
+    </div>
+
+    {/* Layout / Map */}
+    <div className="space-y-6">
+      <h3 className="text-2xl font-bold text-foreground">Facility Layout</h3>
+      <div className="border border-border bg-card shadow-sm overflow-hidden rounded-lg max-w-4xl mx-auto p-2 bg-white">
+        <img
+          src={GalvanizingLayout}
+          alt="Facility layout"
+          className="w-full h-auto object-contain"
+        />
+      </div>
+    </div>
+  </div>
+);
+
+const ZincFlakeCoatingContent = () => (
+  <div className="py-6 space-y-12">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      {/* Description */}
+      <div className="space-y-6">
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          The zinc flake coating process involves surface preparation (cleaning/blasting), applying a liquid mix of zinc/aluminum flakes in a binder (via spray or dip-spin), and then heat-curing (baking) to create a tough, multi-layered, corrosion-resistant inorganic film that provides cathodic protection without hydrogen embrittlement, often followed by optional topcoats for added properties.
+        </p>
+      </div>
+
+      {/* Process Diagram */}
+      <div className="space-y-6">
+        <h3 className="text-2xl font-bold text-foreground">Our Process</h3>
+        <div className="border border-border bg-card shadow-sm overflow-hidden rounded-lg p-2 bg-white">
+          <img
+            src={ZincFlakeProcess}
+            alt="Zinc flake coating process"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 // --- Main Page Component ---
 
 export default function DesignServices() {
@@ -332,6 +405,20 @@ export default function DesignServices() {
       description: "Hot Dip Galvanising Plant",
       content: <TalojaContent />,
       previewImage: HDG,
+    },
+    {
+      id: "galvanizing",
+      title: "Hot-Dip Galvanizing",
+      description: "Corrosion protection process",
+      content: <HotDipGalvanizingContent />,
+      previewImage: HotDipProcess,
+    },
+    {
+      id: "zinc-flake",
+      title: "Zinc Flake Coating",
+      description: "Corrosion-resistant inorganic film",
+      content: <ZincFlakeCoatingContent />,
+      previewImage: ZincFlakeProcess,
     },
   ];
 

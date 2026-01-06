@@ -11,10 +11,10 @@ const TopBar = () => {
             <Phone className="w-4 h-4" />
             <span className="truncate">+91 9876543210</span>
           </a>
-          <span className="text-muted-foreground hidden md:inline">/</span>
-          <a href="tel:+919123456789" className="hover:text-primary transition-smooth">
+          {/* <span className="text-muted-foreground hidden md:inline">/</span> */}
+          {/* <a href="tel:+919123456789" className="hover:text-primary transition-smooth">
             <span className="truncate">+91 9123456789</span>
-          </a>
+          </a> */}
         </div>
 
         {/* Right Section */}
