@@ -9,7 +9,7 @@ const TopBar = () => {
           <span className="text-white-muted-foreground hidden md:inline">Have any questions?</span>
           <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-primary transition-smooth">
             <Phone className="w-4 h-4" />
-            <span className="truncate">+91 9876543210</span>
+            <span className="truncate">+91 8080006900</span>
           </a>
           {/* <span className="text-muted-foreground hidden md:inline">/</span> */}
           {/* <a href="tel:+919123456789" className="hover:text-primary transition-smooth">
