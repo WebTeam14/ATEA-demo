@@ -19,9 +19,9 @@ const TopBar = () => {
 
         {/* Right Section */}
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-4">
-          <a href="mailto:info@talojaengineering.com" className="flex items-center gap-2 hover:text-primary transition-smooth hidden md:flex">
+          <a href="mailto:info@talojaengineeringcluster.com" className="flex items-center gap-2 hover:text-primary transition-smooth hidden md:flex">
             <Mail className="w-4 h-4 flex-shrink-0" />
-            <span className="truncate">info@talojaengineering.com</span>
+            <span className="truncate">info@talojaengineeringcluster.com</span>
           </a>
           <div className="flex items-center gap-3">
             <a href="#" className="w-8 h-8 rounded-full border border-muted-foreground/30 flex items-center justify-center hover:bg-primary hover:border-primary transition-smooth flex-shrink-0">

@@ -74,21 +74,22 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-gray-medium text-sm">
-                  Additional Taloja Engineering Association
-                  (<span className="font-bold">Taloja Engineering Cluster</span>)
-                  Plot no P-__,
-                  MIDC Taloja,
-                  Taluka Panvel,
+                  Additional Taloja Engineering Association (Taloja Engineering Cluster)<br />
+                  Plot no P-__, MIDC Taloja, Taluka Panvel,<br />
                   District Raigad 410208 Maharashtra
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-gray-medium text-sm">+91 9876543210</span>
+                <span className="text-gray-medium text-sm">+91  8080006900</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-gray-medium text-sm">info@talojaengineering.com</span>
+              <li className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:info@talojaengineeringcluster.com" className="text-gray-medium text-sm hover:text-primary transition-smooth">info@talojaengineeringcluster.com</a>
+                  <a href="mailto:atea@talojaengineeringcluster.com" className="text-gray-medium text-sm hover:text-primary transition-smooth">atea@talojaengineeringcluster.com</a>
+                  <a href="mailto:director@talojaengineeringcluster.com" className="text-gray-medium text-sm hover:text-primary transition-smooth">director@talojaengineeringcluster.com</a>
+                </div>
               </li>
             </ul>
           </div>

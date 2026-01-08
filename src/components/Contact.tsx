@@ -82,8 +82,9 @@ const Contact = () => {
                 <div>
                   <h4 className="font-poppins font-semibold text-foreground mb-1">Address</h4>
                   <p className="text-muted-foreground text-sm">
-                    Taloja MIDC, Plot No. 123,<br />
-                    Navi Mumbai, Maharashtra 410208
+                    Additional Taloja Engineering Association (Taloja Engineering Cluster)<br />
+                    Plot no P-__, MIDC Taloja, Taluka Panvel,<br />
+                    District Raigad 410208 Maharashtra
                   </p>
                 </div>
               </div>
@@ -95,7 +96,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-poppins font-semibold text-foreground mb-1">Phone</h4>
                   <p className="text-muted-foreground text-sm">
-                    +91 9876543210<br />
+                    +91  8080006900<br />
                     +91 9123456789
                   </p>
                 </div>
@@ -107,10 +108,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-poppins font-semibold text-foreground mb-1">Email</h4>
-                  <p className="text-muted-foreground text-sm">
-                    info@talojaengineering.com<br />
-                    support@talojaengineering.com
-                  </p>
+                  <div className="text-muted-foreground text-sm flex flex-col gap-1">
+                    <a href="mailto:info@talojaengineeringcluster.com" className="hover:text-primary transition-smooth">info@talojaengineeringcluster.com</a>
+                    <a href="mailto:atea@talojaengineeringcluster.com" className="hover:text-primary transition-smooth">atea@talojaengineeringcluster.com</a>
+                    <a href="mailto:director@talojaengineeringcluster.com" className="hover:text-primary transition-smooth">director@talojaengineeringcluster.com</a>
+                  </div>
                 </div>
               </div>
 

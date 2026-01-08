@@ -36,17 +36,23 @@ export default function ContactUs() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <span className="text-foreground">+91 9876543210</span>
+                <span className="text-foreground">+91 8080006900</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-primary" />
-                <span className="text-foreground">info@engineeringclusterpune.com</span>
+              <div className="flex items-start space-x-3">
+                <Mail className="w-5 h-5 text-primary mt-1" />
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:info@talojaengineeringcluster.com" className="text-foreground hover:text-primary transition-smooth">info@talojaengineeringcluster.com</a>
+                  <a href="mailto:atea@talojaengineeringcluster.com" className="text-foreground hover:text-primary transition-smooth">atea@talojaengineeringcluster.com</a>
+                  <a href="mailto:director@talojaengineeringcluster.com" className="text-foreground hover:text-primary transition-smooth">director@talojaengineeringcluster.com</a>
+                </div>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-primary" />
-                <span className="text-foreground">Plot no P-__, MIDC Taloja, Taluka Panvel,
-                  District Raigad
-                  410208 Maharashtra</span>
+                <span className="text-foreground">
+                  Additional Taloja Engineering Association (Taloja Engineering Cluster)<br />
+                  Plot no P-__, MIDC Taloja, Taluka Panvel,<br />
+                  District Raigad 410208 Maharashtra
+                </span>
               </div>
             </div>
           </div>
@@ -83,7 +89,7 @@ export default function ContactUs() {
           <div className="max-w-7xl mx-auto">
             <iframe
               title="Taloja Engineering Cluster Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.0000000000005!2d73.00000000000001!3d18.999999999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU5JzAwLjAiTiA3M8KwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v0000000000000"
+              src="https://www.google.com/maps?q=Additional+Taloja+Engineering+Association+MIDC+Taloja&output=embed"
               className="w-full h-72 md:h-96 rounded-lg shadow-md border border-border"
               allowFullScreen
               loading="lazy"
