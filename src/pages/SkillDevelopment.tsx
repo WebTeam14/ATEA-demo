@@ -1,5 +1,6 @@
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function SkillDevelopment() {
   return (
@@ -36,6 +37,7 @@ export default function SkillDevelopment() {
           ))}
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

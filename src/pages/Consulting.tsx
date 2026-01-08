@@ -181,6 +181,7 @@ export default function Consulting() {
           </div>
         </DialogContent>
       </Dialog>
+      <Footer />
     </div>
   );
 }

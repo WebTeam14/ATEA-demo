@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   Dialog,
   DialogContent,
@@ -568,6 +569,7 @@ export default function DesignServices() {
           </div>
         </DialogContent>
       </Dialog>
+      <Footer />
     </div>
   );
 }

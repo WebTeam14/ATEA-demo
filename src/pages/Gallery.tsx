@@ -1,5 +1,6 @@
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function Gallery() {
   return (
@@ -8,7 +9,7 @@ export default function Gallery() {
       <Header />
 
       {/* Banner Section */}
-      <div 
+      <div
         className="text-large new-banner-size w-full bg-cover bg-center bg-no-repeat relative"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop')",
@@ -37,6 +38,7 @@ export default function Gallery() {
           ))}
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
