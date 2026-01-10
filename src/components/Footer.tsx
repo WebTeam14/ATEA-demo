@@ -57,10 +57,22 @@ const Footer = () => {
           <div>
             <h4 className="font-poppins font-semibold text-lg mb-6">Our Services</h4>
             <ul className="space-y-3">
-              {["Advanced 5 Axis laser Cutting machine (3D)", "Machine Shop", "NBL Approved Material Testing Lab"].map((service) => (
-                <li key={service}>
-                  <a href="#services" className="text-gray-medium text-sm hover:text-primary transition-smooth">
-                    {service}
+              {[
+                { title: "Vertical Machining Center", path: "/design-services?section=vertical" },
+                { title: "5 axis Horiizontal Machining Center", path: "/design-services?section=horizontal" },
+                { title: "Machine shop", path: "/consulting" },
+                { title: "NABL Approved Metal Testing Lab", path: "/project-management" },
+                { title: "Skill development Training Center", path: "/skill-development" },
+                { title: "Hot Dip Galvanising Services", path: "/design-services?section=galvanizing" },
+                { title: "Zinc Flaking Coating Services", path: "/design-services?section=zinc-flake" },
+                { title: "Powder coating Services", path: "/design-services?section=powder-coating" },
+                { title: "Shot blasting Services", path: "/design-services?section=shot-blasting" },
+                { title: "EPOXY PAINT Services", path: "/design-services?section=epoxy-paint" },
+                { title: "CED Phosphating Services", path: "/design-services?section=ced-phosphating" }
+              ].map((service) => (
+                <li key={service.title}>
+                  <a href={service.path} className="text-gray-medium text-sm hover:text-primary transition-smooth">
+                    {service.title}
                   </a>
                 </li>
               ))}

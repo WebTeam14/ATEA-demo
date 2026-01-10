@@ -29,6 +29,19 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const services = [
+    { title: "5 axis Horiizontal Machining Center", path: "/design-services?section=horizontal" },
+    { title: "Machine shop", path: "/consulting" },
+    { title: "NABL Approved Metal Testing Lab", path: "/project-management" },
+    { title: "Skill development Training Center", path: "/skill-development" },
+    { title: "Hot Dip Galvanising Services", path: "/design-services?section=galvanizing" },
+    { title: "Zinc Flaking Coating Services", path: "/design-services?section=zinc-flake" },
+    { title: "Powder coating Services", path: "/design-services?section=powder-coating" },
+    { title: "Shot blasting Services", path: "/design-services?section=shot-blasting" },
+    { title: "EPOXY PAINT Services", path: "/design-services?section=epoxy-paint" },
+    { title: "CED Phosphating Services", path: "/design-services?section=ced-phosphating" },
+  ];
+
   return (
     <header className="w-full">
 
@@ -90,19 +103,20 @@ export default function Header() {
                 </button>
                 {servicesOpen && (
                   <div
-                    className="absolute left-0 top-full mt-2 w-56 bg-popover shadow-lg rounded-md py-2 z-50"
+                    className="absolute left-0 top-full mt-2 w-72 bg-popover shadow-lg rounded-md py-2 z-50"
                     onMouseEnter={() => setServicesOpen(true)}
                     onMouseLeave={() => { if (!servicesPersist) setServicesOpen(false); }}
                   >
-                    <Link to="/design-services" className="block px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground transition-colors">
-                      Advanced 5 Axis laser Cutting machine (3D)
-                    </Link>
-                    <Link to="/consulting" className="block px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground transition-colors">
-                      Machine Shop
-                    </Link>
-                    <Link to="/project-management" className="block px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground transition-colors">
-                      NABL Approved Material Testing Lab
-                    </Link>
+                    {services.map((service, index) => (
+                      <Link
+                        key={index}
+                        to={service.path}
+                        className="block px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+                        onClick={() => { setServicesOpen(false); setServicesPersist(false); }}
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
                   </div>
                 )}
               </li>
@@ -182,15 +196,16 @@ export default function Header() {
                   </button>
                   {servicesOpen && (
                     <div className="pl-4 mt-2 space-y-2">
-                      <Link to="/design-services" className="block py-1 text-xs hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                        Design Services
-                      </Link>
-                      <Link to="/consulting" className="block py-1 text-xs hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                        Consulting
-                      </Link>
-                      <Link to="/project-management" className="block py-1 text-xs hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                        Project Management
-                      </Link>
+                      {services.map((service, index) => (
+                        <Link
+                          key={index}
+                          to={service.path}
+                          className="block py-1 text-xs hover:text-primary transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
                     </div>
                   )}
                 </li>

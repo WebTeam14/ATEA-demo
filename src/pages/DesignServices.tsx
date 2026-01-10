@@ -1,14 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ArrowLeft } from "lucide-react";
 
 import ModelDA300 from "@/assets/Model-DA300.png";
 import DA300Detail from "@/assets/DA300.png";
@@ -20,6 +15,11 @@ import HotDipProcess from "@/assets/hot-dip-process.jpg";
 import GalvanizingFacility from "@/assets/galvanizing-facility.jpg";
 import GalvanizingLayout from "@/assets/galvanising-layout.jpg";
 import ZincFlakeProcess from "@/assets/zinc-flake-process.jpg";
+import PowderCoating from "@/assets/powder-coating.png";
+import EpoxyPaint from "@/assets/epoxy_paint.png";
+import ShotBlasting from "@/assets/ShotBlasting.png";
+import CEDPhosphating from "@/assets/CED-Phosphating.jpg";
+import ZincFlake from "@/assets/zinc-flake.png";
 
 // --- Data & Components for Sections ---
 
@@ -252,57 +252,70 @@ const TalojaContent = () => (
 
       {/* Details */}
       <div className="border border-border bg-card p-6">
+        <h3 className="text-xl font-bold text-primary mb-6 border-b pb-2">HOT DIP GALVANISING PLANT</h3>
         <table className="w-full text-sm">
           <tbody className="divide-y divide-border">
             <tr>
-              <td className="py-2 text-muted-foreground">Plant Size</td>
-              <td className="py-2 font-semibold text-right">
-                5.5 × 1.2 × 1.5 m (Expandable to 6.5 m)
+              <td className="py-2 text-muted-foreground font-semibold">1. Plant Size</td>
+              <td className="py-2 text-right">
+                5.5m Long x 1.2m Wide x 1.5m Deep (with provision for 6.5m long kettle for expansion)
               </td>
             </tr>
             <tr>
-              <td className="py-2 text-muted-foreground">Product Type</td>
-              <td className="py-2 font-semibold text-right">Sundry</td>
+              <td className="py-2 text-muted-foreground font-semibold">2. Product Type</td>
+              <td className="py-2 text-right">Sundry</td>
             </tr>
             <tr>
-              <td className="py-2 text-muted-foreground">Capacity</td>
-              <td className="py-2 font-semibold text-right">
-                1.5 TPH (~1000 MT / Month)
+              <td className="py-2 text-muted-foreground font-semibold">3. Capacity</td>
+              <td className="py-2 text-right">
+                1.5 ton /hour or say 1000 MT /month
               </td>
             </tr>
             <tr>
-              <td className="py-2 text-muted-foreground">Fuel</td>
-              <td className="py-2 font-semibold text-right">LPG / CNG</td>
+              <td className="py-2 text-muted-foreground font-semibold">4. Fuel used</td>
+              <td className="py-2 text-right">LPG / CNG</td>
             </tr>
             <tr>
-              <td className="py-2 text-muted-foreground">Land Area</td>
-              <td className="py-2 font-semibold text-right">5576 sq. mts</td>
+              <td className="py-2 text-muted-foreground font-semibold">5. Contact Persons</td>
+              <td className="py-2 text-right">
+                Satish Shetty, Harish Shetty, Ashok Jain
+              </td>
             </tr>
             <tr>
-              <td className="py-2 text-muted-foreground">Process Tanks</td>
-              <td className="py-2 font-semibold text-right">7.5 × 1.2 m</td>
+              <td className="py-2 text-muted-foreground font-semibold">6. Mobile Numbers</td>
+              <td className="py-2 text-right">
+                8080006900 , 9820639026, 9820292729
+              </td>
             </tr>
             <tr>
-              <td className="py-2 text-muted-foreground">Hot Air Dryer</td>
-              <td className="py-2 font-semibold text-right">7.5 × 1.2 m</td>
-            </tr>
-            <tr>
-              <td className="py-2 text-muted-foreground">Company</td>
-              <td className="py-2 font-semibold text-right">
+              <td className="py-2 text-muted-foreground font-semibold">7. Company Name</td>
+              <td className="py-2 text-right">
                 Jayashree Galva P Ltd
               </td>
             </tr>
             <tr>
-              <td className="py-2 text-muted-foreground">Contact</td>
-              <td className="py-2 font-semibold text-right">
-                8080006900 / 9820639026 / 9820292729
+              <td className="py-2 text-muted-foreground font-semibold">8. Address</td>
+              <td className="py-2 text-right whitespace-pre-line">
+                Plot no A 62, MIDC Taloja, District Raigad, Taluka Panvel. 410208
               </td>
             </tr>
             <tr>
-              <td className="py-2 text-muted-foreground">Email</td>
-              <td className="py-2 font-semibold text-right">
+              <td className="py-2 text-muted-foreground font-semibold">9. Email ID</td>
+              <td className="py-2 text-right">
                 talojaengineeringcluster@gmail.com
               </td>
+            </tr>
+            <tr>
+              <td className="py-2 text-muted-foreground font-semibold">10. Land Size</td>
+              <td className="py-2 text-right">5576 sq. mts</td>
+            </tr>
+            <tr>
+              <td className="py-2 text-muted-foreground font-semibold">11. Process Tanks</td>
+              <td className="py-2 text-right">7.5m x 1.2 m</td>
+            </tr>
+            <tr>
+              <td className="py-2 text-muted-foreground font-semibold">12. Hot Air Dryer</td>
+              <td className="py-2 text-right">7.5m x 1.2 m</td>
             </tr>
           </tbody>
         </table>
@@ -338,6 +351,67 @@ const HotDipGalvanizingContent = () => (
             className="w-full h-auto object-contain"
           />
         </div>
+      </div>
+    </div>
+
+    {/* Plant Details Chart */}
+    <div className="space-y-6">
+      <h3 className="text-2xl font-bold text-foreground">HOT DIP GALVANISING PLANT Details</h3>
+      <div className="border border-border bg-card shadow-sm overflow-hidden rounded-lg p-6 bg-white">
+        <table className="w-full text-sm">
+          <tbody className="divide-y divide-border">
+            <tr>
+              <td className="py-3 text-muted-foreground font-semibold w-1/3">1. Plant Size</td>
+              <td className="py-3 text-foreground">5.5m Long x 1.2m Wide x 1.5m Deep (with provision for 6.5m long kettle for expansion)</td>
+            </tr>
+            <tr>
+              <td className="py-3 text-muted-foreground font-semibold">2. Product Type</td>
+              <td className="py-3 text-foreground">Sundry</td>
+            </tr>
+            <tr>
+              <td className="py-3 text-muted-foreground font-semibold">3. Capacity</td>
+              <td className="py-3 text-foreground">1.5 ton /hour or say 1000 MT /month</td>
+            </tr>
+            <tr>
+              <td className="py-3 text-muted-foreground font-semibold">4. Fuel used</td>
+              <td className="py-3 text-foreground">LPG / CNG</td>
+            </tr>
+            <tr>
+              <td className="py-3 text-muted-foreground font-semibold">5. Contact Persons</td>
+              <td className="py-3 text-foreground">Satish Shetty, Harish Shetty, Ashok Jain</td>
+            </tr>
+            <tr>
+              <td className="py-3 text-muted-foreground font-semibold">6. Mobile Numbers</td>
+              <td className="py-3 text-foreground">8080006900 , 9820639026, 9820292729</td>
+            </tr>
+            <tr>
+              <td className="py-3 text-muted-foreground font-semibold">7. Company Name</td>
+              <td className="py-3 text-foreground font-bold">Jayashree Galva P Ltd</td>
+            </tr>
+            <tr>
+              <td className="py-3 text-muted-foreground font-semibold">8. Address</td>
+              <td className="py-3 text-foreground">Plot no A 62, MIDC Taloja, District Raigad, Taluka Panvel. 410208</td>
+            </tr>
+            <tr>
+              <td className="py-3 text-muted-foreground font-semibold">9. Email ID</td>
+              <td className="py-3 text-primary hover:underline">
+                <a href="mailto:talojaengineeringcluster@gmail.com">talojaengineeringcluster@gmail.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td className="py-3 text-muted-foreground font-semibold">10. Land Size</td>
+              <td className="py-3 text-foreground">5576 sq. mts</td>
+            </tr>
+            <tr>
+              <td className="py-3 text-muted-foreground font-semibold">11. Process Tanks</td>
+              <td className="py-3 text-foreground">7.5m x 1.2 m</td>
+            </tr>
+            <tr>
+              <td className="py-3 text-muted-foreground font-semibold">12. Hot Air Dryer</td>
+              <td className="py-3 text-foreground">7.5m x 1.2 m</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
@@ -377,13 +451,84 @@ const ZincFlakeCoatingContent = () => (
         </div>
       </div>
     </div>
+    <div className="border border-border bg-card shadow-sm overflow-hidden rounded-lg">
+      <img src={ZincFlake} alt="Zinc Flake Coating" className="w-full h-auto object-cover" />
+    </div>
+  </div>
+);
+
+const PowderCoatingContent = () => (
+  <div className="py-6 space-y-12">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="space-y-6">
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Powder coating is a dry finishing process that uses finely ground particles of pigment and resin, which are electrostatically charged and sprayed onto a part. The parts are then cured in an oven, where the powder melts and fuses into a smooth, durable coating. It provides a more robust finish than liquid paint and is highly resistant to chipping, scratching, and fading.
+        </p>
+      </div>
+      <div className="border border-border bg-card shadow-sm overflow-hidden rounded-lg">
+        <img src={PowderCoating} alt="Powder Coating Process" className="w-full h-auto object-cover" />
+      </div>
+    </div>
+  </div>
+);
+
+const EpoxyPaintContent = () => (
+  <div className="py-6 space-y-12">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="space-y-6">
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Epoxy painting involves the application of a thermosetting polymer that provides exceptional adhesion, chemical resistance, and durability. Our professional spray booths ensure a clean, controlled environment for applying epoxy coatings to industrial components, ensuring a high-quality finish that protects against harsh environments and wear.
+        </p>
+      </div>
+      <div className="border border-border bg-card shadow-sm overflow-hidden rounded-lg">
+        <img src={EpoxyPaint} alt="Epoxy Paint Spray Booth" className="w-full h-auto object-cover" />
+      </div>
+    </div>
+  </div>
+);
+
+const ShotBlastingContent = () => (
+  <div className="py-6 space-y-12">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="space-y-6">
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Shot blasting is a surface treatment process used to clean, strengthen, or polish metal. It involves forcibly propelling a stream of abrasive material (shot) against a surface under high pressure. This effectively removes surface contaminants like rust, scale, and old paint, creating an ideal surface profile for subsequent coating or finishing operations.
+        </p>
+      </div>
+      <div className="border border-border bg-card shadow-sm overflow-hidden rounded-lg">
+        <img src={ShotBlasting} alt="Shot Blasting Machine" className="w-full h-auto object-cover" />
+      </div>
+    </div>
+  </div>
+);
+
+const CEDPhosphatingContent = () => (
+  <div className="py-6 space-y-12">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="space-y-6">
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Cathodic Electro-Deposition (CED) combined with Phosphating is a sophisticated coating process used primarily for corrosion resistance on complex metal parts. Phosphating creates a crystalline layer on the metal surface that improves adhesion, while CED uses an electric current to depose paint onto the part, ensuring 100% coverage even in recessed areas.
+        </p>
+      </div>
+      <div className="border border-border bg-card shadow-sm overflow-hidden rounded-lg">
+        <img src={CEDPhosphating} alt="CED Phosphating Facility" className="w-full h-auto object-cover" />
+      </div>
+    </div>
   </div>
 );
 
 // --- Main Page Component ---
 
 export default function DesignServices() {
+  const [searchParams] = useSearchParams();
   const [activeSection, setActiveSection] = useState<string | null>(null);
+
+  useEffect(() => {
+    const section = searchParams.get("section");
+    if (section) {
+      setActiveSection(section);
+    }
+  }, [searchParams]);
 
   const sections = [
     {
@@ -419,7 +564,35 @@ export default function DesignServices() {
       title: "Zinc Flake Coating",
       description: "Corrosion-resistant inorganic film",
       content: <ZincFlakeCoatingContent />,
-      previewImage: ZincFlakeProcess,
+      previewImage: ZincFlake,
+    },
+    {
+      id: "powder-coating",
+      title: "Powder Coating",
+      description: "Durable and robust dry finishing",
+      content: <PowderCoatingContent />,
+      previewImage: PowderCoating,
+    },
+    {
+      id: "epoxy-paint",
+      title: "Epoxy Paint Spray Booth",
+      description: "High-quality polymer coatings",
+      content: <EpoxyPaintContent />,
+      previewImage: EpoxyPaint,
+    },
+    {
+      id: "shot-blasting",
+      title: "Shot Blasting Machine",
+      description: "Surface cleaning and preparation",
+      content: <ShotBlastingContent />,
+      previewImage: ShotBlasting,
+    },
+    {
+      id: "ced-phosphating",
+      title: "CED Phosphating",
+      description: "Advanced corrosion protection",
+      content: <CEDPhosphatingContent />,
+      previewImage: CEDPhosphating,
     },
   ];
 
@@ -439,53 +612,85 @@ export default function DesignServices() {
       >
         <div className="bg-black/60 absolute inset-0 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white text-center px-4 relative z-10 font-poppins">
-            Design & Engineering Services
+            Engineering Services
           </h1>
         </div>
       </div>
 
       <div className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-          {/* Main Content / Introduction Area (Left Side - 3 cols) */}
+          {/* Main Content Area (Left Side - 3 cols) */}
           <div className="lg:col-span-3">
             <div className="lg:pr-8">
-              <h2 className="text-3xl font-bold text-foreground mb-6">
-                Comprehensive Engineering Solutions
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                ATEA provides world-class design and engineering services,
-                leveraging state-of-the-art machining centers and industrial
-                facilities. Our capabilities span from high-precision 5-axis
-                machining to large-scale galvanising operations.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Preview Cards for visuals on main page */}
-                {sections.map((section) => (
-                  <div
-                    key={section.id}
-                    onClick={() => setActiveSection(section.id)}
-                    className="group cursor-pointer border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all"
-                  >
-                    <div className="h-48 bg-muted flex items-center justify-center relative overflow-hidden p-4">
-                      {/* Placeholder visuals for the cards */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent group-hover:from-primary/10 transition-colors duration-500" />
-                      {section.previewImage ? (
-                        <img
-                          src={section.previewImage}
-                          alt={section.title}
-                          className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 relative z-10"
-                        />
-                      ) : (
-                        <span className="text-4xl font-bold text-primary/20 group-hover:text-primary/40 transition-colors">ATEA</span>
-                      )}
-                    </div>
-                    <div className="p-4 border-t border-border">
-                      <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">{section.title}</h3>
-                      <p className="text-sm text-muted-foreground">{section.description}</p>
-                    </div>
+              {!activeSection ? (
+                <>
+                  <h2 className="text-3xl font-bold text-foreground mb-6">
+                    Comprehensive Engineering Solutions
+                  </h2>
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                    ATEA provides world-class design and engineering services,
+                    leveraging state-of-the-art machining centers and industrial
+                    facilities. Our capabilities span from high-precision 5-axis
+                    machining to large-scale galvanising operations.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {sections.map((section) => (
+                      <div
+                        key={section.id}
+                        onClick={() => {
+                          setActiveSection(section.id);
+                          window.scrollTo({ top: 400, behavior: "smooth" });
+                        }}
+                        className="group cursor-pointer border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all"
+                      >
+                        <div className="h-48 bg-muted flex items-center justify-center relative overflow-hidden p-4">
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent group-hover:from-primary/10 transition-colors duration-500" />
+                          {section.previewImage ? (
+                            <img
+                              src={section.previewImage}
+                              alt={section.title}
+                              className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 relative z-10"
+                            />
+                          ) : (
+                            <span className="text-4xl font-bold text-primary/20 group-hover:text-primary/40 transition-colors">ATEA</span>
+                          )}
+                        </div>
+                        <div className="p-4 border-t border-border">
+                          <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">{section.title}</h3>
+                          <p className="text-sm text-muted-foreground">{section.description}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </>
+              ) : (
+                <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                  <button
+                    onClick={() => setActiveSection(null)}
+                    className="flex items-center text-primary font-semibold mb-6 hover:underline group"
+                  >
+                    <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+                    Back to Overview
+                  </button>
+
+                  <div className="mb-8 border-b border-border pb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-primary">
+                      {activeSection === "taloja" ? (
+                        <span className="font-bold">Taloja Engineering Cluster</span>
+                      ) : (
+                        sections.find((s) => s.id === activeSection)?.title
+                      )}
+                    </h2>
+                    <p className="text-muted-foreground mt-2">
+                      {sections.find((s) => s.id === activeSection)?.description}
+                    </p>
+                  </div>
+
+                  <div className="service-content">
+                    {sections.find((s) => s.id === activeSection)?.content}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
@@ -497,10 +702,26 @@ export default function DesignServices() {
                 Services Menu
               </h3>
               <div className="flex flex-col space-y-2">
+                <button
+                  onClick={() => setActiveSection(null)}
+                  className={`text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-between group ${!activeSection
+                    ? "bg-primary text-primary-foreground shadow-md"
+                    : "hover:bg-accent hover:text-accent-foreground text-muted-foreground bg-card border border-transparent hover:border-border"
+                    }`}
+                >
+                  <span>Overview</span>
+                  <ChevronRight
+                    className={`w-4 h-4 transition-transform ${!activeSection ? "rotate-90" : "group-hover:translate-x-1"
+                      }`}
+                  />
+                </button>
                 {sections.map((section) => (
                   <button
                     key={section.id}
-                    onClick={() => setActiveSection(section.id)}
+                    onClick={() => {
+                      setActiveSection(section.id);
+                      window.scrollTo({ top: 400, behavior: "smooth" });
+                    }}
                     className={`text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-between group ${activeSection === section.id
                       ? "bg-primary text-primary-foreground shadow-md"
                       : "hover:bg-accent hover:text-accent-foreground text-muted-foreground bg-card border border-transparent hover:border-border"
@@ -525,50 +746,6 @@ export default function DesignServices() {
         </div>
       </div>
 
-      {/* Modal Dialog */}
-      <Dialog
-        open={!!activeSection}
-        onOpenChange={(open) => !open && setActiveSection(null)}
-      >
-        <DialogContent className="max-w-7xl h-[90vh] overflow-y-auto w-[98vw] p-0 gap-0 focus:outline-none bg-background">
-          <div className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border px-6 py-4 flex items-center justify-between shadow-sm">
-            <DialogHeader>
-              <DialogTitle className="text-2xl font-bold text-primary flex items-center gap-2">
-                {activeSection === "taloja" ? (
-                  <span className="font-bold">Taloja Engineering Cluster</span>
-                ) : (
-                  sections.find((s) => s.id === activeSection)?.title
-                )}
-              </DialogTitle>
-            </DialogHeader>
-            <button
-              onClick={() => setActiveSection(null)}
-              className="rounded-full p-2 hover:bg-accent hover:text-accent-foreground transition-colors border border-transparent hover:border-border"
-              aria-label="Close"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-5 h-5"
-              >
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-              </svg>
-            </button>
-          </div>
-
-          <div className="px-6 md:px-10 pb-12 pt-8 max-w-7xl mx-auto w-full">
-            {sections.find((s) => s.id === activeSection)?.content}
-          </div>
-        </DialogContent>
-      </Dialog>
       <Footer />
     </div>
   );
